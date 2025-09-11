@@ -24,12 +24,13 @@
     </g>
   </svg>
 
-  <!-- HERO SECTION -->
+<!-- HERO SECTION -->
 <header class="relative z-10">
-  <!-- Nav on hero -->
+  <!-- Nav -->
   <nav class="absolute top-0 left-0 right-0 z-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
+        <!-- Logo -->
         <a href="#top" class="flex items-center gap-2 group">
           <div
             class="h-9 w-9 rounded-xl bg-gradient-to-br from-[#E5C766] to-[#D4AF37] shadow-md ring-1 ring-white/10 flex items-center justify-center">
@@ -40,16 +41,31 @@
           </span>
         </a>
 
+        <!-- Nav Links + Mobile Toggle -->
         <div class="flex items-center gap-6">
-          <!-- Mobile menu toggle -->
-          <input id="menuToggle" type="checkbox" class="peer hidden" />
-          <label for="menuToggle"
-            class="lg:hidden inline-flex items-center justify-center rounded-lg p-2 ring-1 ring-white/10 hover:ring-white/30 cursor-pointer text-white">
-            <span class="sr-only">Open menu</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6">
-              <path d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
-            </svg>
-          </label>
+          <!-- Mobile toggle wrapper -->
+          <div class="lg:hidden relative">
+            <input id="menuToggle" type="checkbox" class="peer hidden" />
+            <label for="menuToggle"
+              class="inline-flex items-center justify-center rounded-lg p-2 ring-1 ring-white/10 hover:ring-white/30 cursor-pointer text-white">
+              <span class="sr-only">Open menu</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6">
+                <path d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+              </svg>
+            </label>
+
+            <!-- Mobile dropdown -->
+            <div
+              class="peer-checked:block hidden absolute right-0 mt-2 w-48 bg-[#0B2C4A]/95 backdrop-blur border border-white/10 rounded-xl shadow-lg text-white">
+              <ul class="px-4 py-4 space-y-3 text-sm">
+                <li><a href="#values" class="block px-2 py-2 rounded-lg hover:bg-white/10">Values</a></li>
+                <li><a href="#process" class="block px-2 py-2 rounded-lg hover:bg-white/10">Process</a></li>
+                <li><a href="#about" class="block px-2 py-2 rounded-lg hover:bg-white/10">About</a></li>
+                <li><a href="#ceo" class="block px-2 py-2 rounded-lg hover:bg-white/10">Leadership</a></li>
+                <li><a href="#contact" class="block px-2 py-2 rounded-lg hover:bg-white/10">Get in touch</a></li>
+              </ul>
+            </div>
+          </div>
 
           <!-- Desktop nav -->
           <ul class="hidden lg:flex items-center gap-8 text-sm text-white">
@@ -65,18 +81,6 @@
           </a>
         </div>
       </div>
-    </div>
-
-    <!-- Mobile dropdown -->
-    <div
-      class="peer-checked:block hidden lg:hidden bg-[#0B2C4A]/90 backdrop-blur border-t border-white/10 text-white">
-      <ul class="mx-auto max-w-7xl px-4 py-4 space-y-3 text-sm">
-        <li><a href="#values" class="block px-2 py-2 rounded-lg hover:bg-white/10">Values</a></li>
-        <li><a href="#process" class="block px-2 py-2 rounded-lg hover:bg-white/10">Process</a></li>
-        <li><a href="#about" class="block px-2 py-2 rounded-lg hover:bg-white/10">About</a></li>
-        <li><a href="#ceo" class="block px-2 py-2 rounded-lg hover:bg-white/10">Leadership</a></li>
-        <li><a href="#contact" class="block px-2 py-2 rounded-lg hover:bg-white/10">Get in touch</a></li>
-      </ul>
     </div>
   </nav>
 
@@ -105,16 +109,6 @@
             Khumo Holdings Group drives sustainable development across construction, technology, e-commerce,
             real estate, mining, energy, and property asset management — building prosperity with purpose.
           </p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <!-- <a href="#values"
-              class="inline-flex items-center rounded-xl bg-gradient-to-br from-[#E5C766] to-[#D4AF37] px-5 py-3 font-semibold text-[#071E31] shadow-glow hover:translate-y-[1px] transition">
-              Explore Values
-            </a>
-            <a href="#process"
-              class="inline-flex items-center rounded-xl border border-white/10 bg-white/5 px-5 py-3 font-semibold text-white hover:bg-white/10 transition">
-              Our Process
-            </a> -->
-          </div>
 
           <!-- Animated gold accent line -->
           <div
@@ -131,7 +125,7 @@
   <section id="values" class="relative z-10 py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 items-start">
-        <div>
+        <div appScrollAnimate>
           <h2 class="text-3xl sm:text-4xl font-bold">Company Values</h2>
           <p class="mt-4 text-[#E5C766] font-semibold">Empowerment & Inclusive Economic Transformation</p>
           <div class="mt-5 space-y-4 text-white/80 leading-relaxed">
@@ -141,7 +135,7 @@
               fostering sustainable development and lasting social impact.</p>
           </div>
         </div>
-        <div class="relative">
+        <div class="relative" appScrollAnimate>
           <div class="rounded-2xl border border-white/10 bg-[#0B2C4A]/40 p-8 backdrop-blur shadow-glow">
             <h3 class="text-lg font-semibold text-[#E5C766]">Sectors We Grow</h3>
             <ul class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
@@ -166,17 +160,17 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl sm:text-4xl font-bold text-center">Our Diverse Portfolio of Services</h2>
       <div class="mt-12 grid md:grid-cols-3 gap-8">
-        <div class="rounded-xl border border-white/10 bg-white/5 p-6">
+        <div class="rounded-xl border border-white/10 bg-white/5 p-6" appScrollAnimate>
           <h3 class="text-xl font-semibold text-[#E5C766]">Construction & Mining</h3>
           <p class="mt-3 text-white/80">Comprehensive construction and mining solutions, ranging from infrastructure
             development to project management.</p>
         </div>
-        <div class="rounded-xl border border-white/10 bg-white/5 p-6">
+        <div class="rounded-xl border border-white/10 bg-white/5 p-6" appScrollAnimate>
           <h3 class="text-xl font-semibold text-[#E5C766]">Energy & Real Estate</h3>
           <p class="mt-3 text-white/80">Sustainable power, renewable projects, and property development that support
             South Africa’s growth and greener future.</p>
         </div>
-        <div class="rounded-xl border border-white/10 bg-white/5 p-6">
+        <div class="rounded-xl border border-white/10 bg-white/5 p-6" appScrollAnimate>
           <h3 class="text-xl font-semibold text-[#E5C766]">E-Commerce & Digital</h3>
           <p class="mt-3 text-white/80">Cutting-edge digital platforms and consultancy, empowering businesses and consumers
             alike.</p>
@@ -190,7 +184,7 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
       
       <!-- TEXT -->
-      <div>
+      <div appScrollAnimate>
         <h2 class="text-3xl sm:text-4xl font-bold">Construction Solutions</h2>
         <p class="mt-4 text-white/80">We deliver comprehensive construction services, expertly managing projects
           from conception to completion.</p>
@@ -208,7 +202,7 @@
 
       <!-- IMAGE -->
       <div class="relative min-h-[320px] rounded-2xl overflow-hidden border border-white/10">
-        <div class="absolute inset-0 bg-[url('/assets/construction.png')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-[url('/assets/construction.png')] bg-cover bg-center" appScrollAnimate></div>
         <div class="absolute inset-0 bg-black/30"></div>
       </div>
 
@@ -221,12 +215,12 @@
       
       <!-- IMAGE -->
       <div class="relative min-h-[320px] rounded-2xl overflow-hidden border border-white/10 order-last lg:order-first">
-        <div class="absolute inset-0 bg-[url('/assets/mining.png')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-[url('/assets/mining.png')] bg-cover bg-center" appScrollAnimate></div>
         <div class="absolute inset-0 bg-black/30"></div>
       </div>
 
       <!-- TEXT -->
-      <div>
+      <div appScrollAnimate>
         <h2 class="text-3xl sm:text-4xl font-bold">Mining & Energy Services</h2>
         <p class="mt-4 text-white/80">Supporting clients in optimising operations with sustainable solutions.</p>
         <ul class="mt-6 space-y-3 text-white/80">
@@ -250,7 +244,7 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
       
       <!-- TEXT -->
-      <div>
+      <div appScrollAnimate>
         <h2 class="text-3xl sm:text-4xl font-bold">E-Commerce & Real Estate</h2>
         <p class="mt-4 text-white/80">Leveraging digital innovation and property expertise to empower clients.</p>
         <ul class="mt-6 space-y-3 text-white/80">
@@ -268,7 +262,7 @@
 
       <!-- IMAGE -->
       <div class="relative min-h-[320px] rounded-2xl overflow-hidden border border-white/10">
-        <div class="absolute inset-0 bg-[url('/assets/commerce.png')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-[url('/assets/commerce.png')] bg-cover bg-center" appScrollAnimate></div>
         <div class="absolute inset-0 bg-black/30"></div>
       </div>
 
@@ -279,7 +273,7 @@
   <!-- ABOUT -->
   <section id="about" class="relative z-10 py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-5 gap-10">
+      <div class="grid lg:grid-cols-5 gap-10" appScrollAnimate>
         <div class="lg:col-span-3">
           <h2 class="text-3xl sm:text-4xl font-bold">Company Overview</h2>
           <h3 class="mt-2 text-[#E5C766] font-semibold">About Us</h3>
@@ -289,7 +283,7 @@
             management. The Group is deeply committed to empowerment, transformation, and inclusive economic growth,
             positioning itself as a leader in driving sustainable development across Southern Africa.</p>
         </div>
-        <div class="lg:col-span-2">
+        <div class="lg:col-span-2" appScrollAnimate>
           <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8">
             <div
               class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br from-[#E5C766]/40 to-[#D4AF37]/40 blur-2xl">
@@ -306,7 +300,7 @@
   <section id="ceo" class="relative z-10 py-24 bg-[#061A2A]">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
+        <div appScrollAnimate>
           <h2 class="text-3xl sm:text-4xl font-bold">Visionary Leadership</h2>
           <p class="mt-4 text-white/80 leading-relaxed">As the visionary CEO of Khumo Holdings Group, I lead a dynamic
             and diversified portfolio spanning construction, MedTech, e-commerce, and energy sectors. My passion lies in
@@ -318,7 +312,7 @@
             Holdings Group, we embrace forward-thinking approaches to address industry challenges, fuel
             entrepreneurship, and foster inclusive opportunity.</p>
         </div>
-        <div>
+        <div appScrollAnimate>
           <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-cover bg-center min-h-[380px]"
             style="background-image: url('assets/khumo.png')">
             <div class="absolute inset-0 bg-gradient-to-tr from-[#071E31]/80 via-transparent to-[#071E31]/60"></div>
@@ -336,7 +330,7 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="relative z-10 py-24">
+  <section id="contact" class="relative z-10 py-24" appScrollAnimate>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div
         class="rounded-3xl border border-white/10 bg-gradient-to-br from-[#0B2C4A] to-[#061A2A] p-10 md:p-14 overflow-hidden relative">
@@ -365,7 +359,7 @@
       </div>
     </div>
 
-    <footer class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 px-50 text-sm text-white/70">
+    <footer class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 px-50 text-sm text-white/70" appScrollAnimate>
       <p>© <span class="font-semibold text-white">Khumo Holdings Group</span> — Developed by <a rel="stylesheet"
           href="lungelo.dev">www.lungelo.dev</a></p>
       <div class="flex items-center gap-4">
@@ -380,3 +374,4 @@
     </footer> 
   </section>
 </div>
+
